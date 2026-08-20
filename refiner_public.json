@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-20T13:19:04-04:00",
+  "generated_at": "2026-08-20T13:43:29-04:00",
   "week": {
     "iso": "2026-W33",
     "start": "2026-08-10",
@@ -22,11 +22,11 @@
           "earliest_maturity_date": "2026-09-16",
           "windows_open": true
         },
-        "reply_rate_pct": 18.6,
+        "reply_rate_pct": 7.9,
         "slow_day_fill_pct": null,
         "sends": 184,
         "opt_outs": 7,
-        "opt_outs_trend_pct": null
+        "opt_outs_trend_pct": -22.2
       },
       "segments": [
         {
@@ -38,6 +38,7 @@
             "have": 0,
             "need": 400
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -49,6 +50,7 @@
             "have": 0,
             "need": 400
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -60,6 +62,7 @@
             "have": 0,
             "need": 400
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -71,6 +74,7 @@
             "have": 0,
             "need": 400
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -82,6 +86,7 @@
             "have": 27,
             "need": 32
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -93,17 +98,19 @@
             "have": 83,
             "need": 38
           },
+          "evidence_complete": true,
           "matured": false
         },
         {
           "name": "Builder Upgrade",
-          "state": "insufficient_volume",
+          "state": "accumulating",
           "sends_week": 22,
           "lift_pp": null,
           "evidence": {
             "have": 22,
             "need": 32
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -115,17 +122,19 @@
             "have": 3,
             "need": 32
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
           "name": "Pedi Season",
-          "state": "insufficient_volume",
+          "state": "accumulating",
           "sends_week": 26,
           "lift_pp": null,
           "evidence": {
             "have": 32,
             "need": 660
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -137,17 +146,19 @@
             "have": 0,
             "need": 400
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
           "name": "Referral",
-          "state": "insufficient_volume",
+          "state": "accumulating",
           "sends_week": 31,
           "lift_pp": null,
           "evidence": {
             "have": 44,
             "need": 60
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -159,6 +170,7 @@
             "have": 66,
             "need": 180
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -170,6 +182,7 @@
             "have": 3,
             "need": 698
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -181,6 +194,7 @@
             "have": 7,
             "need": 32
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -192,6 +206,7 @@
             "have": 97,
             "need": 78
           },
+          "evidence_complete": true,
           "matured": false
         },
         {
@@ -203,6 +218,7 @@
             "have": 9,
             "need": 32
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -214,17 +230,19 @@
             "have": 2,
             "need": 32
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
           "name": "Holly (due-rebook -> Chris)",
-          "state": "insufficient_volume",
+          "state": "accumulating",
           "sends_week": 11,
           "lift_pp": null,
           "evidence": {
             "have": 23,
             "need": 32
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -236,6 +254,7 @@
             "have": 20,
             "need": 32
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -247,6 +266,7 @@
             "have": 8,
             "need": 32
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -258,17 +278,19 @@
             "have": 5,
             "need": 32
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
           "name": "Holly (due-rebook -> Mayra)",
-          "state": "insufficient_volume",
+          "state": "accumulating",
           "sends_week": 0,
           "lift_pp": null,
           "evidence": {
             "have": 32,
             "need": 32
           },
+          "evidence_complete": true,
           "matured": false
         },
         {
@@ -280,6 +302,7 @@
             "have": 134,
             "need": 104
           },
+          "evidence_complete": true,
           "matured": false
         },
         {
@@ -291,6 +314,7 @@
             "have": 114,
             "need": 36
           },
+          "evidence_complete": true,
           "matured": false
         },
         {
@@ -302,6 +326,7 @@
             "have": 106,
             "need": 32
           },
+          "evidence_complete": true,
           "matured": false
         },
         {
@@ -313,6 +338,7 @@
             "have": 5,
             "need": 344
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -324,6 +350,7 @@
             "have": 76,
             "need": 146
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -335,6 +362,7 @@
             "have": 53,
             "need": 126
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -346,6 +374,7 @@
             "have": 3,
             "need": 32
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -357,6 +386,7 @@
             "have": 2,
             "need": 784
           },
+          "evidence_complete": false,
           "matured": false
         }
       ],
@@ -377,11 +407,11 @@
           "earliest_maturity_date": "2026-09-16",
           "windows_open": true
         },
-        "reply_rate_pct": 24.4,
+        "reply_rate_pct": 11.4,
         "slow_day_fill_pct": null,
         "sends": 145,
         "opt_outs": 3,
-        "opt_outs_trend_pct": null
+        "opt_outs_trend_pct": -57.1
       },
       "segments": [
         {
@@ -393,6 +423,7 @@
             "have": 0,
             "need": 400
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -404,6 +435,7 @@
             "have": 0,
             "need": 400
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -415,6 +447,7 @@
             "have": 0,
             "need": 400
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -426,6 +459,7 @@
             "have": 0,
             "need": 400
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -437,6 +471,7 @@
             "have": 9,
             "need": 32
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -448,28 +483,31 @@
             "have": 52,
             "need": 116
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
           "name": "Builder Upgrade",
-          "state": "insufficient_volume",
+          "state": "accumulating",
           "sends_week": 27,
           "lift_pp": null,
           "evidence": {
             "have": 27,
             "need": 32
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
           "name": "Pedi Season",
-          "state": "insufficient_volume",
+          "state": "accumulating",
           "sends_week": 31,
           "lift_pp": null,
           "evidence": {
             "have": 34,
             "need": 32
           },
+          "evidence_complete": true,
           "matured": false
         },
         {
@@ -481,17 +519,19 @@
             "have": 0,
             "need": 400
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
           "name": "Referral",
-          "state": "insufficient_volume",
+          "state": "accumulating",
           "sends_week": 24,
           "lift_pp": null,
           "evidence": {
             "have": 37,
             "need": 32
           },
+          "evidence_complete": true,
           "matured": false
         },
         {
@@ -503,17 +543,19 @@
             "have": 4,
             "need": 32
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
           "name": "Slow Day Eve",
-          "state": "insufficient_volume",
+          "state": "accumulating",
           "sends_week": 0,
           "lift_pp": null,
           "evidence": {
             "have": 25,
             "need": 260
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -525,6 +567,7 @@
             "have": 2,
             "need": 32
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -536,6 +579,7 @@
             "have": 5,
             "need": 502
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -547,6 +591,7 @@
             "have": 82,
             "need": 32
           },
+          "evidence_complete": true,
           "matured": false
         },
         {
@@ -558,6 +603,7 @@
             "have": 3,
             "need": 32
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -569,6 +615,7 @@
             "have": 4,
             "need": 32
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -580,6 +627,7 @@
             "have": 9,
             "need": 32
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -591,6 +639,7 @@
             "have": 1,
             "need": 32
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -602,6 +651,7 @@
             "have": 18,
             "need": 32
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -613,6 +663,7 @@
             "have": 16,
             "need": 32
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -624,6 +675,7 @@
             "have": 23,
             "need": 226
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -635,6 +687,7 @@
             "have": 8,
             "need": 32
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -646,6 +699,7 @@
             "have": 155,
             "need": 104
           },
+          "evidence_complete": true,
           "matured": false
         },
         {
@@ -657,6 +711,7 @@
             "have": 62,
             "need": 32
           },
+          "evidence_complete": true,
           "matured": false
         },
         {
@@ -668,6 +723,7 @@
             "have": 66,
             "need": 32
           },
+          "evidence_complete": true,
           "matured": false
         },
         {
@@ -679,6 +735,7 @@
             "have": 123,
             "need": 232
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -690,6 +747,7 @@
             "have": 69,
             "need": 58
           },
+          "evidence_complete": true,
           "matured": false
         },
         {
@@ -701,6 +759,7 @@
             "have": 3,
             "need": 32
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -712,6 +771,7 @@
             "have": 20,
             "need": 64
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -723,6 +783,7 @@
             "have": 3,
             "need": 32
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -734,6 +795,7 @@
             "have": 1,
             "need": 32
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -745,6 +807,7 @@
             "have": 1,
             "need": 32
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -756,6 +819,7 @@
             "have": 1,
             "need": 32
           },
+          "evidence_complete": false,
           "matured": false
         },
         {
@@ -767,6 +831,7 @@
             "have": 3,
             "need": 32
           },
+          "evidence_complete": false,
           "matured": false
         }
       ],
@@ -801,20 +866,20 @@
         5
       ],
       "reply_rate_pct": [
-        27.1,
-        27.1,
-        34.9,
-        26.2,
-        22.7,
-        18.6
+        14.4,
+        12.2,
+        17.2,
+        12.9,
+        12.0,
+        7.9
       ],
       "opt_outs": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        7,
+        2,
+        4,
+        6,
+        9,
+        7
       ]
     },
     "zen-nail-spa": {
@@ -835,26 +900,26 @@
         3
       ],
       "reply_rate_pct": [
-        30.2,
-        32.0,
-        31.1,
-        30.4,
-        34.9,
-        24.4
+        15.9,
+        17.0,
+        17.2,
+        16.9,
+        19.7,
+        11.4
       ],
       "opt_outs": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        5,
+        2,
+        7,
+        14,
+        7,
+        3
       ]
     }
   },
   "notes": [
     "Est. revenue is imputed at $55/ticket (average service ticket) -- real per-visit revenue capture from Zota is a future phase. This number is bookings times a flat price, not observed revenue.",
     "The weekly learning loop is not live yet -- these numbers come directly from the existing weekly report and reply-rate math, not from a champion/challenger experiment.",
-    "About 50 segments average under 8 sends/week and may never reach enough volume to measure -- that is expected, not a bug."
+    "About 41 segments average under 8 sends/week and may never reach enough volume to measure -- that is expected, not a bug."
   ]
 }
