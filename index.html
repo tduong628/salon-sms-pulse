@@ -110,9 +110,12 @@
     return 'flat';
   };
   var stateLabel = function (state) {
+    if (state === 'accumulating') return { cls: 'accumulating', label: 'still gathering' };
     if (state === 'decided') return { cls: 'decided', label: 'decided' };
     if (state === 'insufficient_volume') return { cls: 'insufficient_volume', label: 'too few sends to ever measure' };
-    return { cls: 'accumulating', label: 'still gathering' };
+    // Unrecognized state must never default to the optimistic "still
+    // gathering" label -- fail toward a neutral "status unknown".
+    return { cls: 'insufficient_volume', label: 'status unknown' };
   };
   var esc = function (s) {
     var d = document.createElement('div');
@@ -125,16 +128,20 @@
   // plain-English clause naming how many segments are still open. When
   // everything is matured, both disappear -- a settled number renders
   // clean so the caveat carries real information, not wallpaper.
+  // GATE:FAIL item 2 -- fail CLOSED. A payload missing bookings_is_partial
+  // entirely must render as partial, not settled. Only an explicit
+  // `false` counts as settled.
+  var isSettled = function (h, key) { return h[key] === false; };
   var bookingsDisplay = function (h) {
     var n = (h.bookings_attributed === null || h.bookings_attributed === undefined) ? 0 : h.bookings_attributed;
-    return h.bookings_is_partial ? (n + '+') : String(n);
+    return isSettled(h, 'bookings_is_partial') ? String(n) : (n + '+');
   };
   var revenueDisplay = function (h) {
     var base = money(h.revenue_imputed);
-    return h.revenue_is_partial ? (base + '+') : base;
+    return isSettled(h, 'revenue_is_partial') ? base : (base + '+');
   };
   var maturityClause = function (h) {
-    if (!h.bookings_is_partial) return null;
+    if (isSettled(h, 'bookings_is_partial')) return null;
     var m = h.maturity || {};
     var contributing = m.segments_contributing || 0;
     var matured = m.segments_matured || 0;
@@ -154,15 +161,16 @@
       : ((seg.lift_pp >= 0 ? '+' : '') + seg.lift_pp + 'pp');
     var championText = '';
     if (seg.champion) {
-      championText += ' · champion ' + esc(seg.champion.variant_id) + ' (' + seg.champion.conv_pct + '%)';
+      championText += ' · champion ' + esc(seg.champion.variant_id) + ' (' + esc(seg.champion.conv_pct) + '%)';
     }
     if (seg.challenger) {
-      championText += ' vs challenger ' + esc(seg.challenger.variant_id) + ' (' + seg.challenger.conv_pct + '%)';
+      championText += ' vs challenger ' + esc(seg.challenger.variant_id) + ' (' + esc(seg.challenger.conv_pct) + '%)';
     }
     var bar = '';
     if (seg.state !== 'insufficient_volume') {
+      var completeNote = seg.evidence_complete ? ' &middot; evidence complete (no learner yet to decide)' : '';
       bar = '<div class="bar-track"><div class="bar-fill" style="width:' + progressPct + '%"></div></div>' +
-            '<div class="bar-caption">' + ev.have + ' of ~' + ev.need + ' needed</div>';
+            '<div class="bar-caption">' + ev.have + ' of ~' + ev.need + ' needed' + completeNote + '</div>';
     }
     var openWindow = (seg.sends_week || 0) > 0 && seg.matured !== true;
     return (
