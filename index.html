@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>SMS Pulse — Salon Health, Anywhere</title>
+<style>
+  :root {
+    --bg: #0b1220;
+    --surface: #0f172a;
+    --surface-2: #131e33;
+    --border: #1e293b;
+    --text: #e2e8f0;
+    --text-dim: #94a3b8;
+    --text-faint: #64748b;
+    --accent: #38bdf8;
+    --green: #34d399;
+    --amber: #fbbf24;
+    --red: #fb7185;
+    --gray: #94a3b8;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 48px;
+  }
+  header {
+    padding: 20px 16px 12px;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: rgba(11,18,32,0.92);
+    backdrop-filter: blur(8px);
+    z-index: 10;
+  }
+  h1 { font-size: 19px; margin: 0 0 4px; font-weight: 700; }
+  .subtitle { font-size: 12px; color: var(--text-dim); margin: 0; }
+  main { max-width: 720px; margin: 0 auto; padding: 16px; }
+  .banner {
+    font-size: 12px; font-weight: 600; padding: 8px 12px; border-radius: 10px;
+    margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+  }
+  .banner.fallback { background: rgba(251,191,36,0.12); color: var(--amber); }
+  .banner.refiner { background: rgba(52,211,153,0.12); color: var(--green); }
+  .salon-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+    padding: 18px; margin-bottom: 18px;
+  }
+  .salon-name { font-size: 17px; font-weight: 700; margin-bottom: 2px; }
+  .salon-week { font-size: 11px; color: var(--text-faint); margin-bottom: 14px; }
+  .kpi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+  .kpi { background: var(--surface-2); border-radius: 10px; padding: 10px 12px; }
+  .kpi-label { font-size: 9px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-faint); margin-bottom: 3px; }
+  .kpi-value { font-size: 18px; font-weight: 700; }
+  .kpi-value.dim { font-size: 13px; font-weight: 500; color: var(--text-dim); }
+  .section-title { font-size: 12px; font-weight: 700; color: #cbd5e1; margin: 14px 0 8px; text-transform: uppercase; letter-spacing: 0.03em; }
+  .seg-row { border-bottom: 1px solid var(--border); padding: 9px 0; }
+  .seg-row:last-child { border-bottom: none; }
+  .seg-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .seg-name { font-size: 13px; font-weight: 600; }
+  .chip { font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 999px; white-space: nowrap; }
+  .chip.accumulating { background: rgba(56,189,248,0.14); color: var(--accent); }
+  .chip.decided { background: rgba(52,211,153,0.14); color: var(--green); }
+  .chip.insufficient_volume { background: rgba(148,163,184,0.14); color: var(--gray); }
+  .seg-meta { font-size: 11px; color: var(--text-dim); margin: 3px 0; }
+  .bar-track { height: 5px; background: var(--border); border-radius: 6px; overflow: hidden; margin-top: 4px; }
+  .bar-fill { height: 100%; background: var(--accent); }
+  .bar-caption { font-size: 9px; color: var(--text-faint); margin-top: 2px; }
+  .empty { font-size: 12px; color: var(--text-faint); padding: 4px 0; }
+  .proposal { background: rgba(251,191,36,0.08); border-left: 3px solid var(--amber); border-radius: 8px; padding: 8px 10px; margin-bottom: 6px; }
+  .proposal-text { font-size: 12px; }
+  .proposal-meta { font-size: 10px; color: var(--text-faint); margin-top: 2px; }
+  .notes-box { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; margin-top: 4px; }
+  .note-line { font-size: 11px; color: var(--text-faint); margin-bottom: 6px; }
+  .note-line:last-child { margin-bottom: 0; }
+  .loading, .error { padding: 40px 16px; text-align: center; color: var(--text-dim); font-size: 13px; }
+  .error { color: var(--red); }
+  footer { text-align: center; font-size: 10px; color: var(--text-faint); padding: 24px 16px 8px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>📡 SMS Pulse</h1>
+  <p class="subtitle" id="header-sub">Read-only salon SMS health — updated weekly</p>
+</header>
+<main id="app">
+  <div class="loading">Loading…</div>
+</main>
+<footer>Aggregates only. No customer names, phone numbers, or individual records ever appear here.</footer>
+
+<script>
+(function () {
+  var money = function (v) {
+    if (v === null || v === undefined) return '—';
+    return '$' + Number(v).toLocaleString(undefined, { maximumFractionDigits: 0 });
+  };
+  var pct = function (v) {
+    if (v === null || v === undefined) return 'not yet measurable';
+    return Number(v).toFixed(1) + '%';
+  };
+  var trendArrow = function (v) {
+    if (v === null || v === undefined) return 'trend n/a';
+    if (v > 0) return '▲ ' + Math.abs(v).toFixed(1) + '%';
+    if (v < 0) return '▼ ' + Math.abs(v).toFixed(1) + '%';
+    return 'flat';
+  };
+  var stateLabel = function (state) {
+    if (state === 'decided') return { cls: 'decided', label: 'decided' };
+    if (state === 'insufficient_volume') return { cls: 'insufficient_volume', label: 'too few sends to ever measure' };
+    return { cls: 'accumulating', label: 'still gathering' };
+  };
+  var esc = function (s) {
+    var d = document.createElement('div');
+    d.textContent = (s === null || s === undefined) ? '' : String(s);
+    return d.innerHTML;
+  };
+
+  function renderSegment(seg) {
+    var ev = seg.evidence || { have: 0, need: 0 };
+    var progressPct = ev.need > 0 ? Math.min(100, Math.round((ev.have / ev.need) * 100)) : 0;
+    var st = stateLabel(seg.state);
+    var liftText = (seg.lift_pp === null || seg.lift_pp === undefined)
+      ? 'not yet measurable'
+      : ((seg.lift_pp >= 0 ? '+' : '') + seg.lift_pp + 'pp');
+    var championText = '';
+    if (seg.champion) {
+      championText += ' · champion ' + esc(seg.champion.variant_id) + ' (' + seg.champion.conv_pct + '%)';
+    }
+    if (seg.challenger) {
+      championText += ' vs challenger ' + esc(seg.challenger.variant_id) + ' (' + seg.challenger.conv_pct + '%)';
+    }
+    var bar = '';
+    if (seg.state !== 'insufficient_volume') {
+      bar = '<div class="bar-track"><div class="bar-fill" style="width:' + progressPct + '%"></div></div>' +
+            '<div class="bar-caption">' + ev.have + ' of ~' + ev.need + ' needed</div>';
+    }
+    return (
+      '<div class="seg-row">' +
+        '<div class="seg-top">' +
+          '<div class="seg-name">' + esc(seg.name) + '</div>' +
+          '<span class="chip ' + st.cls + '">' + st.label + '</span>' +
+        '</div>' +
+        '<div class="seg-meta">' + (seg.sends_week || 0) + ' sent this week' + championText + ' · lift ' + liftText + '</div>' +
+        bar +
+      '</div>'
+    );
+  }
+
+  function renderSalon(key, s) {
+    var h = s.headline || {};
+    var segs = (s.segments || []).slice();
+    var order = { accumulating: 0, decided: 1, insufficient_volume: 2 };
+    segs.sort(function (a, c) {
+      return (order[a.state] || 0) - (order[c.state] || 0) || (c.sends_week || 0) - (a.sends_week || 0);
+    });
+    var proposals = s.proposals_pending || [];
+    var changes = s.changes_applied || [];
+
+    var segsHtml = segs.length
+      ? segs.map(renderSegment).join('')
+      : '<div class="empty">No segments recorded.</div>';
+
+    var proposalsHtml = proposals.length
+      ? proposals.map(function (p, i) {
+          return '<div class="proposal"><div class="proposal-text">' + (i + 1) + ') ' + esc(p.summary || p.kind) + '</div>' +
+                 '<div class="proposal-meta">' + (p.segment ? esc(p.segment) + ' · ' : '') + 'expires ' + esc((p.expires_at || '').slice(0, 10)) + '</div></div>';
+        }).join('')
+      : '<div class="empty">No proposals awaiting a decision.</div>';
+
+    var changesHtml = '';
+    if (changes.length) {
+      changesHtml = '<div class="section-title">Changes applied this week</div>' +
+        changes.map(function (c) {
+          return '<div class="seg-meta">✓ ' + esc(c.segment) + ': ' + esc(c.from) + ' → ' + esc(c.to) + '</div>';
+        }).join('');
+    }
+
+    return (
+      '<div class="salon-card">' +
+        '<div class="salon-name">' + esc(s.display_name || key) + '</div>' +
+        '<div class="salon-week" id="week-label-' + esc(key) + '"></div>' +
+        '<div class="kpi-grid">' +
+          '<div class="kpi"><div class="kpi-label">Est. revenue (imputed)</div><div class="kpi-value">' + money(h.revenue_imputed) + '</div></div>' +
+          '<div class="kpi"><div class="kpi-label">Bookings attributed</div><div class="kpi-value">' + (h.bookings_attributed ?? '—') + '</div></div>' +
+          '<div class="kpi"><div class="kpi-label">Reply rate</div><div class="kpi-value dim">' + pct(h.reply_rate_pct) + '</div></div>' +
+          '<div class="kpi"><div class="kpi-label">Slow-day fill</div><div class="kpi-value dim">' + (h.slow_day_fill_pct === null || h.slow_day_fill_pct === undefined ? 'not yet measurable' : pct(h.slow_day_fill_pct)) + '</div></div>' +
+          '<div class="kpi"><div class="kpi-label">Sends</div><div class="kpi-value dim">' + (h.sends ?? 0) + '</div></div>' +
+          '<div class="kpi"><div class="kpi-label">Opt-outs</div><div class="kpi-value dim">' + (h.opt_outs ?? 0) + ' &middot; ' + trendArrow(h.opt_outs_trend_pct) + '</div></div>' +
+        '</div>' +
+        '<div class="section-title">Champion / challenger by segment</div>' +
+        segsHtml +
+        '<div class="section-title">Proposal queue</div>' +
+        proposalsHtml +
+        changesHtml +
+      '</div>'
+    );
+  }
+
+  function render(payload) {
+    var app = document.getElementById('app');
+    var week = payload.week || {};
+    document.getElementById('header-sub').textContent =
+      'Week ' + (week.iso || '') + ' · updated ' + (payload.generated_at || '').replace('T', ' ').slice(0, 16);
+
+    var bannerCls = payload.data_source === 'refiner' ? 'refiner' : 'fallback';
+    var bannerText = payload.data_source === 'refiner'
+      ? '🟢 Live learning loop'
+      : '🟡 Fallback data — the weekly learning loop is not feeding this yet';
+
+    var salons = payload.salons || {};
+    var salonsHtml = Object.keys(salons).map(function (key) {
+      return renderSalon(key, salons[key]);
+    }).join('');
+
+    var notes = payload.notes || [];
+    var notesHtml = notes.length
+      ? '<div class="notes-box">' + notes.map(function (n) {
+          return '<div class="note-line">ⓘ ' + esc(n) + '</div>';
+        }).join('') + '</div>'
+      : '';
+
+    app.innerHTML =
+      '<div class="banner ' + bannerCls + '">' + bannerText + '</div>' +
+      salonsHtml +
+      notesHtml;
+
+    Object.keys(salons).forEach(function (key) {
+      var el = document.getElementById('week-label-' + key);
+      if (el) el.textContent = 'Week ' + (week.iso || '') + ' (' + (week.start || '') + ' to ' + (week.end || '') + ')';
+    });
+  }
+
+  fetch('refiner_public.json', { cache: 'no-store' })
+    .then(function (res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.json();
+    })
+    .then(render)
+    .catch(function (err) {
+      document.getElementById('app').innerHTML =
+        '<div class="error">Could not load the latest report (' + esc(err.message) + '). Check back after the next Monday run.</div>';
+    });
+})();
+</script>
+</body>
+</html>

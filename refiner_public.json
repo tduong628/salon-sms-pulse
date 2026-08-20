@@ -1,0 +1,844 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-20T12:51:13-04:00",
+  "week": {
+    "iso": "2026-W33",
+    "start": "2026-08-10",
+    "end": "2026-08-17"
+  },
+  "data_source": "fallback",
+  "salons": {
+    "deluxe-nail-spa": {
+      "display_name": "Deluxe Nail Spa",
+      "headline": {
+        "revenue_imputed": 275.0,
+        "revenue_is_imputed": true,
+        "bookings_attributed": 5,
+        "reply_rate_pct": 18.6,
+        "slow_day_fill_pct": null,
+        "sends": 184,
+        "opt_outs": 7,
+        "opt_outs_trend_pct": null
+      },
+      "segments": [
+        {
+          "name": "At Risk",
+          "state": "insufficient_volume",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 0,
+            "need": 400
+          },
+          "matured": false
+        },
+        {
+          "name": "At Risk Deep",
+          "state": "insufficient_volume",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 0,
+            "need": 400
+          },
+          "matured": false
+        },
+        {
+          "name": "At Risk Early",
+          "state": "insufficient_volume",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 0,
+            "need": 400
+          },
+          "matured": false
+        },
+        {
+          "name": "At Risk Lost",
+          "state": "insufficient_volume",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 0,
+            "need": 400
+          },
+          "matured": false
+        },
+        {
+          "name": "Birthday",
+          "state": "insufficient_volume",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 27,
+            "need": 32
+          },
+          "matured": false
+        },
+        {
+          "name": "Bring A Friend",
+          "state": "accumulating",
+          "sends_week": 83,
+          "lift_pp": null,
+          "evidence": {
+            "have": 83,
+            "need": 38
+          },
+          "matured": false
+        },
+        {
+          "name": "Builder Upgrade",
+          "state": "insufficient_volume",
+          "sends_week": 22,
+          "lift_pp": null,
+          "evidence": {
+            "have": 22,
+            "need": 32
+          },
+          "matured": false
+        },
+        {
+          "name": "Holly (due-rebook)",
+          "state": "insufficient_volume",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 3,
+            "need": 32
+          },
+          "matured": false
+        },
+        {
+          "name": "Pedi Season",
+          "state": "insufficient_volume",
+          "sends_week": 26,
+          "lift_pp": null,
+          "evidence": {
+            "have": 32,
+            "need": 660
+          },
+          "matured": false
+        },
+        {
+          "name": "Re-Engage",
+          "state": "insufficient_volume",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 0,
+            "need": 400
+          },
+          "matured": false
+        },
+        {
+          "name": "Referral",
+          "state": "insufficient_volume",
+          "sends_week": 31,
+          "lift_pp": null,
+          "evidence": {
+            "have": 44,
+            "need": 60
+          },
+          "matured": false
+        },
+        {
+          "name": "Slow Day Eve",
+          "state": "accumulating",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 66,
+            "need": 180
+          },
+          "matured": false
+        },
+        {
+          "name": "engagement_checkin",
+          "state": "insufficient_volume",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 3,
+            "need": 698
+          },
+          "matured": false
+        },
+        {
+          "name": "Gap Fill (Vinnie)",
+          "state": "insufficient_volume",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 7,
+            "need": 32
+          },
+          "matured": false
+        },
+        {
+          "name": "Holly (atrisk-promo)",
+          "state": "accumulating",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 97,
+            "need": 78
+          },
+          "matured": false
+        },
+        {
+          "name": "Holly (due-for-redo -> Cindy)",
+          "state": "insufficient_volume",
+          "sends_week": 2,
+          "lift_pp": null,
+          "evidence": {
+            "have": 9,
+            "need": 32
+          },
+          "matured": false
+        },
+        {
+          "name": "Holly (due-for-redo -> Gigi)",
+          "state": "insufficient_volume",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 2,
+            "need": 32
+          },
+          "matured": false
+        },
+        {
+          "name": "Holly (due-rebook -> Chris)",
+          "state": "insufficient_volume",
+          "sends_week": 11,
+          "lift_pp": null,
+          "evidence": {
+            "have": 23,
+            "need": 32
+          },
+          "matured": false
+        },
+        {
+          "name": "Holly (due-rebook -> Cindy)",
+          "state": "insufficient_volume",
+          "sends_week": 4,
+          "lift_pp": null,
+          "evidence": {
+            "have": 20,
+            "need": 32
+          },
+          "matured": false
+        },
+        {
+          "name": "Holly (due-rebook -> Gigi)",
+          "state": "insufficient_volume",
+          "sends_week": 3,
+          "lift_pp": null,
+          "evidence": {
+            "have": 8,
+            "need": 32
+          },
+          "matured": false
+        },
+        {
+          "name": "Holly (due-rebook -> Lavie)",
+          "state": "insufficient_volume",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 5,
+            "need": 32
+          },
+          "matured": false
+        },
+        {
+          "name": "Holly (due-rebook -> Mayra)",
+          "state": "insufficient_volume",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 32,
+            "need": 32
+          },
+          "matured": false
+        },
+        {
+          "name": "Rebooking (Vinnie)",
+          "state": "accumulating",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 134,
+            "need": 104
+          },
+          "matured": false
+        },
+        {
+          "name": "Review Ask (Vinnie)",
+          "state": "accumulating",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 114,
+            "need": 36
+          },
+          "matured": false
+        },
+        {
+          "name": "Second Visit (Vinnie)",
+          "state": "accumulating",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 106,
+            "need": 32
+          },
+          "matured": false
+        },
+        {
+          "name": "Service Graduation",
+          "state": "insufficient_volume",
+          "sends_week": 2,
+          "lift_pp": null,
+          "evidence": {
+            "have": 5,
+            "need": 344
+          },
+          "matured": false
+        },
+        {
+          "name": "Week Fill (Vinnie)",
+          "state": "accumulating",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 76,
+            "need": 146
+          },
+          "matured": false
+        },
+        {
+          "name": "Winback (Chair-Held)",
+          "state": "accumulating",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 53,
+            "need": 126
+          },
+          "matured": false
+        },
+        {
+          "name": "Holly (due-for-redo -> Lavie)",
+          "state": "insufficient_volume",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 3,
+            "need": 32
+          },
+          "matured": false
+        },
+        {
+          "name": "Holly (fading -> Mayra)",
+          "state": "insufficient_volume",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 2,
+            "need": 784
+          },
+          "matured": false
+        }
+      ],
+      "changes_applied": [],
+      "proposals_pending": []
+    },
+    "zen-nail-spa": {
+      "display_name": "Zen Nail Spa",
+      "headline": {
+        "revenue_imputed": 165.0,
+        "revenue_is_imputed": true,
+        "bookings_attributed": 3,
+        "reply_rate_pct": 24.4,
+        "slow_day_fill_pct": null,
+        "sends": 145,
+        "opt_outs": 3,
+        "opt_outs_trend_pct": null
+      },
+      "segments": [
+        {
+          "name": "At Risk",
+          "state": "insufficient_volume",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 0,
+            "need": 400
+          },
+          "matured": false
+        },
+        {
+          "name": "At Risk Deep",
+          "state": "insufficient_volume",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 0,
+            "need": 400
+          },
+          "matured": false
+        },
+        {
+          "name": "At Risk Early",
+          "state": "insufficient_volume",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 0,
+            "need": 400
+          },
+          "matured": false
+        },
+        {
+          "name": "At Risk Lost",
+          "state": "insufficient_volume",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 0,
+            "need": 400
+          },
+          "matured": false
+        },
+        {
+          "name": "Birthday",
+          "state": "insufficient_volume",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 9,
+            "need": 32
+          },
+          "matured": false
+        },
+        {
+          "name": "Bring A Friend",
+          "state": "accumulating",
+          "sends_week": 52,
+          "lift_pp": null,
+          "evidence": {
+            "have": 52,
+            "need": 116
+          },
+          "matured": false
+        },
+        {
+          "name": "Builder Upgrade",
+          "state": "insufficient_volume",
+          "sends_week": 27,
+          "lift_pp": null,
+          "evidence": {
+            "have": 27,
+            "need": 32
+          },
+          "matured": false
+        },
+        {
+          "name": "Pedi Season",
+          "state": "insufficient_volume",
+          "sends_week": 31,
+          "lift_pp": null,
+          "evidence": {
+            "have": 34,
+            "need": 32
+          },
+          "matured": false
+        },
+        {
+          "name": "Re-Engage",
+          "state": "insufficient_volume",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 0,
+            "need": 400
+          },
+          "matured": false
+        },
+        {
+          "name": "Referral",
+          "state": "insufficient_volume",
+          "sends_week": 24,
+          "lift_pp": null,
+          "evidence": {
+            "have": 37,
+            "need": 32
+          },
+          "matured": false
+        },
+        {
+          "name": "Service Graduation",
+          "state": "insufficient_volume",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 4,
+            "need": 32
+          },
+          "matured": false
+        },
+        {
+          "name": "Slow Day Eve",
+          "state": "insufficient_volume",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 25,
+            "need": 260
+          },
+          "matured": false
+        },
+        {
+          "name": "engagement_checkin",
+          "state": "insufficient_volume",
+          "sends_week": 1,
+          "lift_pp": null,
+          "evidence": {
+            "have": 2,
+            "need": 32
+          },
+          "matured": false
+        },
+        {
+          "name": "Gap Fill (Vinnie)",
+          "state": "insufficient_volume",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 5,
+            "need": 502
+          },
+          "matured": false
+        },
+        {
+          "name": "Holly (atrisk-promo)",
+          "state": "accumulating",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 82,
+            "need": 32
+          },
+          "matured": false
+        },
+        {
+          "name": "Holly (due-for-redo -> Jamie)",
+          "state": "insufficient_volume",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 3,
+            "need": 32
+          },
+          "matured": false
+        },
+        {
+          "name": "Holly (due-for-redo -> Lavie)",
+          "state": "insufficient_volume",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 4,
+            "need": 32
+          },
+          "matured": false
+        },
+        {
+          "name": "Holly (due-for-redo -> Skye)",
+          "state": "insufficient_volume",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 9,
+            "need": 32
+          },
+          "matured": false
+        },
+        {
+          "name": "Holly (due-rebook -> Amy)",
+          "state": "insufficient_volume",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 1,
+            "need": 32
+          },
+          "matured": false
+        },
+        {
+          "name": "Holly (due-rebook -> Angela)",
+          "state": "insufficient_volume",
+          "sends_week": 2,
+          "lift_pp": null,
+          "evidence": {
+            "have": 18,
+            "need": 32
+          },
+          "matured": false
+        },
+        {
+          "name": "Holly (due-rebook -> Jamie)",
+          "state": "insufficient_volume",
+          "sends_week": 1,
+          "lift_pp": null,
+          "evidence": {
+            "have": 16,
+            "need": 32
+          },
+          "matured": false
+        },
+        {
+          "name": "Holly (due-rebook -> Lavie)",
+          "state": "insufficient_volume",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 23,
+            "need": 226
+          },
+          "matured": false
+        },
+        {
+          "name": "Holly (due-rebook -> Skye)",
+          "state": "insufficient_volume",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 8,
+            "need": 32
+          },
+          "matured": false
+        },
+        {
+          "name": "Rebooking (Vinnie)",
+          "state": "accumulating",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 155,
+            "need": 104
+          },
+          "matured": false
+        },
+        {
+          "name": "Review Ask (Vinnie)",
+          "state": "accumulating",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 62,
+            "need": 32
+          },
+          "matured": false
+        },
+        {
+          "name": "Second Visit (Vinnie)",
+          "state": "accumulating",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 66,
+            "need": 32
+          },
+          "matured": false
+        },
+        {
+          "name": "Week Fill (Vinnie)",
+          "state": "accumulating",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 123,
+            "need": 232
+          },
+          "matured": false
+        },
+        {
+          "name": "Winback (Chair-Held)",
+          "state": "accumulating",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 69,
+            "need": 58
+          },
+          "matured": false
+        },
+        {
+          "name": "Holly (fading -> Angela)",
+          "state": "insufficient_volume",
+          "sends_week": 1,
+          "lift_pp": null,
+          "evidence": {
+            "have": 3,
+            "need": 32
+          },
+          "matured": false
+        },
+        {
+          "name": "Holly (fading -> Jamie)",
+          "state": "insufficient_volume",
+          "sends_week": 1,
+          "lift_pp": null,
+          "evidence": {
+            "have": 20,
+            "need": 64
+          },
+          "matured": false
+        },
+        {
+          "name": "Holly (due-for-redo -> Brian)",
+          "state": "insufficient_volume",
+          "sends_week": 1,
+          "lift_pp": null,
+          "evidence": {
+            "have": 3,
+            "need": 32
+          },
+          "matured": false
+        },
+        {
+          "name": "Holly (due-rebook -> Luz)",
+          "state": "insufficient_volume",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 1,
+            "need": 32
+          },
+          "matured": false
+        },
+        {
+          "name": "Holly (fading -> Luz)",
+          "state": "insufficient_volume",
+          "sends_week": 0,
+          "lift_pp": null,
+          "evidence": {
+            "have": 1,
+            "need": 32
+          },
+          "matured": false
+        },
+        {
+          "name": "Holly (due-rebook -> Brian)",
+          "state": "insufficient_volume",
+          "sends_week": 1,
+          "lift_pp": null,
+          "evidence": {
+            "have": 1,
+            "need": 32
+          },
+          "matured": false
+        },
+        {
+          "name": "Holly (due-rebook -> Peter)",
+          "state": "insufficient_volume",
+          "sends_week": 3,
+          "lift_pp": null,
+          "evidence": {
+            "have": 3,
+            "need": 32
+          },
+          "matured": false
+        }
+      ],
+      "changes_applied": [],
+      "proposals_pending": []
+    }
+  },
+  "trend": {
+    "weeks": [
+      "2026-W28",
+      "2026-W29",
+      "2026-W30",
+      "2026-W31",
+      "2026-W32",
+      "2026-W33"
+    ],
+    "deluxe-nail-spa": {
+      "revenue_imputed": [
+        220.0,
+        55.0,
+        165.0,
+        330.0,
+        330.0,
+        275.0
+      ],
+      "bookings": [
+        4,
+        1,
+        3,
+        6,
+        6,
+        5
+      ],
+      "reply_rate_pct": [
+        27.1,
+        27.1,
+        34.9,
+        26.2,
+        22.7,
+        18.6
+      ],
+      "opt_outs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "zen-nail-spa": {
+      "revenue_imputed": [
+        0.0,
+        605.0,
+        275.0,
+        275.0,
+        220.0,
+        165.0
+      ],
+      "bookings": [
+        0,
+        11,
+        5,
+        5,
+        4,
+        3
+      ],
+      "reply_rate_pct": [
+        30.2,
+        32.0,
+        31.1,
+        30.4,
+        34.9,
+        24.4
+      ],
+      "opt_outs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "notes": [
+    "Est. revenue is imputed at $55/ticket (average service ticket) -- real per-visit revenue capture from Zota is a future phase. This number is bookings times a flat price, not observed revenue.",
+    "The weekly learning loop is not live yet -- these numbers come directly from the existing weekly report and reply-rate math, not from a champion/challenger experiment.",
+    "About 50 segments average under 8 sends/week and may never reach enough volume to measure -- that is expected, not a bug."
+  ]
+}
