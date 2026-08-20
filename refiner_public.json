@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-20T12:53:35-04:00",
+  "generated_at": "2026-08-20T13:19:04-04:00",
   "week": {
     "iso": "2026-W33",
     "start": "2026-08-10",
@@ -13,7 +13,15 @@
       "headline": {
         "revenue_imputed": 275.0,
         "revenue_is_imputed": true,
+        "revenue_is_partial": true,
         "bookings_attributed": 5,
+        "bookings_is_partial": true,
+        "maturity": {
+          "segments_contributing": 9,
+          "segments_matured": 0,
+          "earliest_maturity_date": "2026-09-16",
+          "windows_open": true
+        },
         "reply_rate_pct": 18.6,
         "slow_day_fill_pct": null,
         "sends": 184,
@@ -360,7 +368,15 @@
       "headline": {
         "revenue_imputed": 165.0,
         "revenue_is_imputed": true,
+        "revenue_is_partial": true,
         "bookings_attributed": 3,
+        "bookings_is_partial": true,
+        "maturity": {
+          "segments_contributing": 12,
+          "segments_matured": 0,
+          "earliest_maturity_date": "2026-09-16",
+          "windows_open": true
+        },
         "reply_rate_pct": 24.4,
         "slow_day_fill_pct": null,
         "sends": 145,
